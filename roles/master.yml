@@ -1,0 +1,9 @@
+---
+ - name: master
+   hosts: aws_host
+   become: true
+
+   roles:
+     - update
+     - java
+     - nginx

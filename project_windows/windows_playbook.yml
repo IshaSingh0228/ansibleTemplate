@@ -1,0 +1,20 @@
+---
+ - name: Create an Windows ec2
+   hosts: local
+   connection: local
+
+   tasks:
+    - name: Create Windows Instance
+      ec2:
+        key_name: awskeypair
+        instance_type: t2.micro
+        region: us-east-2
+        image: ami-00843a337042b9b8b
+        wait: yes
+        count: 1
+        instance_tags:
+           Name: windowsvm
+           db: database1
+        vpc_subnet_id: subnet-34cd8478
+        assign_public_ip: yes
+

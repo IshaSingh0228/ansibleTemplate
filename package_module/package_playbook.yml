@@ -1,0 +1,11 @@
+---
+ - name: Installing through Generic OS Package Manager
+   hosts: aws_host
+   become: true
+
+   tasks:
+
+      - name: install nginx
+        package:
+              name: nginx
+              state: present

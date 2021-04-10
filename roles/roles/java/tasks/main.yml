@@ -1,0 +1,12 @@
+- name: "installing java"
+  apt:
+    name: "openjdk-8-jdk"
+    state: present
+    update_cache: yes
+#runs apt-get update
+
+- name: "adding path to java"
+  alternatives:
+    name: java
+    link: /usr/bin/java
+    path: /usr/lib/jvm/java-8-openjdk-amd64/bin/java

@@ -1,0 +1,23 @@
+---
+- name: nginx install and start
+  hosts: aws_host
+  become: true
+
+  tasks:
+    - name: ensure nginx is at latest version
+      yum:
+          name: nginx
+          state: latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
+    
+
+    - name: stop nginx
+      service:
+          name: nginx
+          state: stopped
+          
+    - name: ensure nginx is not installed
+      apt: name=nginx state=absent

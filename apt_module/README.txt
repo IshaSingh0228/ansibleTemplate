@@ -1,0 +1,1 @@
+ansible-playbook -i ~/inventory.ini -u ubuntu java_playbook.yml --private-key ~/awskeypair.pem

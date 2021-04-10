@@ -1,0 +1,12 @@
+---
+- name: install mysql on ubuntu node
+  hosts: aws_host
+  become: true
+
+  tasks:
+    - name: installing mysql
+      apt:
+          name: mysql-server
+          state: present
+          #state: latest
+          #update_cache: yes

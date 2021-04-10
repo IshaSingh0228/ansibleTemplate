@@ -1,0 +1,4 @@
+- name: "Package Updating"
+  apt:
+    name: "*"
+    state: latest

@@ -1,0 +1,13 @@
+---
+ - name: using template module
+   hosts: aws_host
+   become: true
+   tasks:
+
+      - name: Template a file, using symbolic modes (equivalent to 0644)
+        ansible.builtin.template:
+                  src: /home/ubuntu/project_template/foo1.yml
+                  dest: /home/ubuntu/file.conf
+                  owner: bin
+                # group: wheel
+                  mode: u=rw,g=r,o=r

@@ -1,0 +1,13 @@
+---
+ - name: copying files
+   hosts: all
+   become: true
+   become_user: root
+   gather_facts: true
+
+   tasks:
+     - name: copy module in effect
+       copy:
+          src: /home/ubuntu/project_copy/sample.txt
+          dest: /home/ubuntu/project_copy_data1/sample.txt/
+          remote_src: no
